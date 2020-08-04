@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   # Validations
 
+  validates :username, :length => { :minimum => 5, :maximum => 20, :allow_blank => true }
+
   validates :username, :inclusion => { :in => [ "Ram", "Lakshmana" ]  }
 
   # Scopes
