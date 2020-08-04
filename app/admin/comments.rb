@@ -1,6 +1,5 @@
 ActiveAdmin.register Comment do
-
- permit_params :body, :commenter_id, :photo_id, :schedule_time, :pin, :schedule_date
+  permit_params :body, :commenter_id, :photo_id, :schedule_time, :pin, :schedule_date
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -14,5 +13,4 @@ ActiveAdmin.register Comment do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
 end

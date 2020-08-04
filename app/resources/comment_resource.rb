@@ -17,5 +17,4 @@ class CommentResource < ApplicationResource
              resource: UserResource
 
   # Indirect associations
-
 end
