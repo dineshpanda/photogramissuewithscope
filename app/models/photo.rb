@@ -3,6 +3,11 @@ class Photo < ApplicationRecord
 
   # Direct associations
 
+  belongs_to :latest_owner,
+             :class_name => "User",
+             :foreign_key => "owner_id",
+             :counter_cache => :latest_photos_count
+
   belongs_to :owner,
              :class_name => "User",
              :counter_cache => true

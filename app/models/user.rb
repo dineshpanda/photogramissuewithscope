@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :latest_photos,
+             :class_name => "Photo",
+             :foreign_key => "owner_id",
+             :dependent => :destroy
+
   has_many   :accepted_sent_friend_requests,
              -> { accepted },
              :class_name => "FriendRequest",
