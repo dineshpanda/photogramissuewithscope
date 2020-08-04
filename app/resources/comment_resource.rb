@@ -11,6 +11,8 @@ class CommentResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :photo
+
   belongs_to :commenter,
              resource: UserResource
 
