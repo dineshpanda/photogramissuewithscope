@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   # Validations
 
+  validates :username, :inclusion => { :in => [ "Ram", "Lakshmana" ]  }
+
   # Scopes
 
   # Include default devise modules. Others available are:

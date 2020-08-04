@@ -12,5 +12,7 @@ RSpec.describe User, type: :model do
 
     describe "Validations" do
 
+    it { should validate_inclusion_of(:username).in_array([ "Ram", "Lakshmana" ]) }
+
     end
 end
