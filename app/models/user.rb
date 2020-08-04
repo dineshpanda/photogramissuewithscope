@@ -41,6 +41,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :commented_photos,
+             :through => :comments,
+             :source => :photo
+
   # Validations
 
   validates :age, :numericality => { :equal_to => 20, :less_than => 22, :other_than => 19, :greater_than => 18, :less_than_or_equal_to => 21, :greater_than_or_equal_to => 20, :odd => true }
