@@ -37,4 +37,6 @@ class Photo < ApplicationRecord
 
   # Scopes
 
+  scope :good, -> { where("photos.rating >= :query", query: 7.5 ) }
+
 end
