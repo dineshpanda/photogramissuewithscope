@@ -3,6 +3,10 @@ class Photo < ApplicationRecord
 
   # Direct associations
 
+  has_many   :likes,
+             :class_name => "Vote",
+             :dependent => :destroy
+
   belongs_to :latest_owner,
              :class_name => "User",
              :foreign_key => "owner_id",
