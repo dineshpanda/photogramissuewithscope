@@ -1,4 +1,6 @@
 class PhotosController < ApplicationController
+  before_action :current_user_must_be_photo_latest_owner, only: [:edit, :update, :destroy] 
+
   before_action :current_user_must_be_photo_owner, only: [:edit, :update, :destroy] 
 
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
@@ -61,6 +63,14 @@ class PhotosController < ApplicationController
 
 
   private
+
+  def current_user_must_be_photo_latest_owner
+    set_photo
+    unless current_user == @photo.latest_owner
+      redirect_back fallback_location: root_path, alert: "You are not authorized for that."
+    end
+  end
+
 
   def current_user_must_be_photo_owner
     set_photo

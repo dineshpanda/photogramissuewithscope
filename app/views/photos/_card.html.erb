@@ -46,7 +46,7 @@
 
       <!-- Edit link photo start -->
       <div class="col">
-        <% if current_user == @photo.owner %>
+        <% if current_user == @photo.latest_owner %>
           <%= link_to edit_photo_url(photo), class: "btn btn-block btn-sm btn-outline-secondary" do %>
             <i class="fas fa-edit"></i>
           <% end %>
@@ -56,7 +56,7 @@
 
       <!-- Delete link photo start -->
       <div class="col">
-        <% if current_user == @photo.owner %>
+        <% if current_user == @photo.latest_owner %>
           <%= link_to photo, method: :delete, data: { confirm: "Do you really want to delete this photo?" }, class: "btn btn-block btn-outline-secondary" do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
