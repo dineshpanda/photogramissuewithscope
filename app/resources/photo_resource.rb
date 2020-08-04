@@ -11,6 +11,9 @@ class PhotoResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :likes,
+             resource: VoteResource
+
   belongs_to :latest_owner,
              resource: UserResource,
              foreign_key: :owner_id
