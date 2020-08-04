@@ -8,6 +8,10 @@ class FriendRequestResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :pending_sender,
+             resource: UserResource,
+             foreign_key: :sender_id
+
   belongs_to :follower,
              resource: UserResource,
              foreign_key: :sender_id
