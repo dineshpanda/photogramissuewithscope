@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   # Validations
 
+  validates :age, :numericality => { :equal_to => 20, :less_than => 22, :other_than => 19, :greater_than => 18, :less_than_or_equal_to => 21, :greater_than_or_equal_to => 20, :odd => true }
+
   validates :username, :uniqueness => { :scope => [:first_name, :last_name, :age], :allow_blank => true, :case_sensitive => true, :message => "username should be unique always" }
 
   validates :username, :presence => { :message => "username can not be blank!" }

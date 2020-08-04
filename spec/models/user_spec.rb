@@ -12,6 +12,8 @@ RSpec.describe User, type: :model do
 
     describe "Validations" do
 
+    it { should validate_numericality_of(:age).is_equal_to(20).is_less_than(22).to be != 19.is_greater_than(18).is_less_than(21).is_greater_than_or_equal_to(20).odd }
+
     it { should validate_uniqueness_of(:username).scoped_to(:first_name).scoped_to(:last_name).scoped_to(:age).allow_nil.case_insensitive.with_message('username should be unique always') }
 
     it { should validate_presence_of(:username).with_message('username can not be blank!') }
