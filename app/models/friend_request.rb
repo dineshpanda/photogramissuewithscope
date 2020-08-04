@@ -33,4 +33,6 @@ class FriendRequest < ApplicationRecord
 
   # Scopes
 
+  scope :accepted, -> { where(:status => "accepted") }
+
 end
