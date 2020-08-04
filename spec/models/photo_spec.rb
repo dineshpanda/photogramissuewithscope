@@ -16,6 +16,8 @@ RSpec.describe Photo, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:fans) }
+
     it { should have_many(:commenters) }
 
     end
