@@ -15,4 +15,6 @@ class Comment < ApplicationRecord
 
   # Scopes
 
+  scope :imp_comments, -> { where(:pin => [true]) }
+
 end
