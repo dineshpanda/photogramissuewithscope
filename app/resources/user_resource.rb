@@ -13,6 +13,10 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :latest_photos,
+             resource: PhotoResource,
+             foreign_key: :owner_id
+
   has_many   :accepted_sent_friend_requests,
              resource: FriendRequestResource,
              foreign_key: :sender_id
