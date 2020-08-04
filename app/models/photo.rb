@@ -37,6 +37,8 @@ class Photo < ApplicationRecord
 
   # Scopes
 
+  scope :recent_photos, -> { where(:status => [:old, :very_recent]) }
+
   scope :good, -> { where("photos.rating >= :query", query: 7.5 ) }
 
 end
