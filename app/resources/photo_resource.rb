@@ -11,6 +11,9 @@ class PhotoResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :owner,
+             resource: UserResource
+
   # Indirect associations
 
 end
