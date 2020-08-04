@@ -1,4 +1,6 @@
 class Photo < ApplicationRecord
+  mount_uploader :image, ImageUploader
+
   enum status: {"old"=>0, "very_recent"=>1} 
 
   # Direct associations
