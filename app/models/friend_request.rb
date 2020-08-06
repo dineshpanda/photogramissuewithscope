@@ -7,7 +7,8 @@ class FriendRequest < ApplicationRecord
 
   belongs_to :follower,
              class_name: "User",
-             foreign_key: "sender_id"
+             foreign_key: "sender_id",
+             counter_cache: :accepted_sent_friend_requests_count
 
   belongs_to :recipient,
              class_name: "User",
@@ -36,4 +37,8 @@ class FriendRequest < ApplicationRecord
   scope :pending, -> { where(status: "pending") }
 
   scope :accepted, -> { where(status: "accepted") }
+
+  def to_s
+    sender.to_s
+  end
 end

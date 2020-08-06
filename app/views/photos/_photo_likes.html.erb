@@ -10,7 +10,7 @@
   <ul class="list-group list-group-flush">
     <% @photo.likes.each do |vote| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <%= link_to vote.user_id, vote_path(vote) %>
+        <%= link_to vote.to_s, vote_path(vote) %>
 
         <% if current_user == vote.user %>
           <%= link_to vote, method: :delete do %>
