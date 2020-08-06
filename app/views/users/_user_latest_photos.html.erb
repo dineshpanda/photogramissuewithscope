@@ -10,7 +10,7 @@
   <ul class="list-group list-group-flush">
     <% @user.latest_photos.each do |photo| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <%= link_to photo.caption, photo_path(photo) %>
+        <%= link_to photo.to_s, photo_path(photo) %>
 
       </li>
     <% end %>

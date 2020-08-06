@@ -84,6 +84,10 @@ class User < ApplicationRecord
 
   scope :vulnerable, -> { where("users.age >= :query", query: 60) }
 
+  def to_s
+    first_name
+  end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
