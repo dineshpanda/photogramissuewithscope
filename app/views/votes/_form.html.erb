@@ -15,7 +15,7 @@
     <% end %>
 
     <%= f.label :photo_id %>
-    <%= f.select :photo_id, options_from_collection_for_select(Photo.all, :id, :caption, @vote.photo_id), {}, class: "form-control" %>
+    <%= f.select :photo_id, options_from_collection_for_select(Photo.all, :id, :to_s, @vote.photo_id), {}, class: "form-control" %>
     <% if photo_id_was_invalid %>
       <% vote.errors.full_messages_for(:photo_id).each do |message| %>
         <div class="invalid-feedback d-flex">
