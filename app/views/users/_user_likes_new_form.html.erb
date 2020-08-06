@@ -4,7 +4,7 @@
 
   <div class="form-group">
     <%= f.label :photo_id %>
-    <%= f.select :photo_id, options_from_collection_for_select(Photo.all, :id, :caption, @vote.photo_id), {}, class: "form-control" %>
+    <%= f.select :photo_id, options_from_collection_for_select(Photo.all, :id, :to_s, @vote.photo_id), {}, class: "form-control" %>
   </div>
 
   <%= f.submit "Create vote", class: "btn btn-block btn-outline-secondary" %>
